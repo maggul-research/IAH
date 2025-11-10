@@ -165,7 +165,7 @@ namespace MyNSE
     , rhoT(rhoT)
     , alpha(alpha)
     , beta(beta)
-    , solver_type(1) /* GMRES:0 and UMFPACK:1 */
+    , solver_type(0) /* GMRES:0 and UMFPACK:1 */
     , triangulation(Triangulation<dim>::maximum_smoothing)
     , fe(FE_Q<dim>(degree + 1),
          dim,
@@ -478,7 +478,7 @@ namespace MyNSE
 
     if (solver_type == 0)
       {
-        SolverControl               solver_control(100000, 1e-9, true);
+        SolverControl               solver_control(1000000, 1e-6, true);
         SolverGMRES<Vector<double>> gmres(solver_control);
 
         gmres.solve(system_matrix.block(blk, blk),
@@ -591,7 +591,7 @@ namespace MyNSE
     setup_dofs();
     initialize_system();
 
-    run_iterations(1e-6, 10000, true);
+    run_iterations(1e-4, 10000, true);
   }
 } // end namespace MyNSE
 
@@ -627,10 +627,10 @@ main()
       const unsigned int degree = 1;
       const double       Pr     = 0.71;
       const double       Ra     = 1.0e+6;
-      const double       rhoU   = 1.0e+2;
-      const double       rhoT   = 1.0e-2;
-      const double       alpha  = 1.0e-1;
-      const double       beta   = 100.0;
+      const double       rhoU   = 1.0e-1;
+      const double       rhoT   = 2.0e-1;
+      const double       alpha  = 1.0e-4;
+      const double       beta   = 1000.0;
 
       if (dim == 2)
         {

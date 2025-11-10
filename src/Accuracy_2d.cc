@@ -766,10 +766,10 @@ main(int argc, char **argv)
       const unsigned int degree = 1;
       const double       Pr     = 1.0;
       const double       Ra     = 1000.0;
-      const double       rhoU   = 10.0;
+      const double       rhoU   = 100.0;
       const double       rhoT   = 10.0;
-      const double       alpha  = 1.0;
-      const double       beta   = 100.0;
+      const double       alpha  = 0.1;
+      const double       beta   = 1000.0;
 
       NaturalConvection<2> flow(alg, degree, Pr, Ra, rhoU, rhoT, alpha, beta);
       flow.run(n_ref);
