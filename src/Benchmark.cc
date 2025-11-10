@@ -598,6 +598,16 @@ namespace MyNSE
 int
 main()
 {
+  // input the simulation dimension
+  unsigned int dim;
+  std::cout << "Enter the simulation dimension (2, 3):\n";
+  std::cin >> dim;
+  if (dim < 2 || dim > 3)
+    {
+      std::cout << "Invalid simulation dimension \n";
+      return 1;
+    }
+
   // input the number of the algorithm
   unsigned int alg;
   std::cout << "Enter the number of the algorithm (1, 2, 3):\n";
@@ -622,8 +632,18 @@ main()
       const double       alpha  = 1.0e-1;
       const double       beta   = 100.0;
 
-      NaturalConvection<2> flow(alg, degree, Pr, Ra, rhoU, rhoT, alpha, beta);
-      flow.run(6);
+      if (dim == 2)
+        {
+          NaturalConvection<2> flow(
+            alg, degree, Pr, Ra, rhoU, rhoT, alpha, beta);
+          flow.run(6);
+        }
+      else if (dim == 3)
+        {
+          NaturalConvection<3> flow(
+            alg, degree, Pr, Ra, rhoU, rhoT, alpha, beta);
+          flow.run(5);
+        }
 
       timer.stop();
       std::cout << std::endl;

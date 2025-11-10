@@ -26,7 +26,7 @@ There are three code files to execute:
 
 * ``Accuracy_2d.cc``  -- compares the computed results against a true solution in 2D
 * ``Accuracy_3d.cc``  -- compares the computed results against a true solution in 3D
-* ``Benchmark.cc`` -- runs differentially heated walls simulation
+* ``Benchmark.cc`` -- runs differentially heated walls simulation in both 2D and 3D
 
 These are built automatically.
 
