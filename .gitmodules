@@ -1,0 +1,6 @@
+[submodule "external/dealii"]
+	path = external/dealii
+	url = https://github.com/dealii/dealii
+[submodule "external/OpenBLAS"]
+	path = external/OpenBLAS
+	url = https://github.com/xianyi/OpenBLAS
