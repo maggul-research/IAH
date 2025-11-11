@@ -14,14 +14,6 @@ Initialize the deal.II submodule
 ```bash
 git submodule update --init --recursive
 ```
-
-(Optional) Verify correct version:
-```bash
-cd external/dealii
-git checkout v9.5.0
-cd ../../
-```
-
 There are three code files to execute:
 
 * ``Accuracy_2d.cc``  -- compares the computed results against a true solution in 2D
