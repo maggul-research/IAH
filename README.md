@@ -2,7 +2,7 @@
 
 This repository implements the Improved Arrow–Hurwicz (IAH) method for solving natural convection equations. The project includes accuracy verification in 2D and 3D, and a classical differentially heated cavity benchmark.
 
-A fully self-contained CMake superbuild automatically builds deal.II v9.5.0 and its dependencies from a pinned git submodules and then compiles the IAH executables. No manual installation of deal.II is required.
+A fully self-contained CMake superbuild automatically builds deal.II and its dependencies from a pinned git submodules and then compiles the IAH executables. No manual installation of deal.II is required.
 
 Clone the repository
 ```bash 
@@ -26,7 +26,7 @@ Build with superbuild (recommended)
 
 The superbuild will
 
-1. build deal.II v9.5.0 into build/_deps/dealii_install
+1. build deal.II into build/_deps/dealii_install
 
 2. build the IAH executables into build/iah-build
 
